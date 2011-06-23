@@ -22,7 +22,7 @@ sub call {
 		if ($ct =~ s{;?\s*charset=([^;\$]+)}{}) {
 			$charset_from = $1;
 		}
-		if ($ct =~ qr{^text/(html|plain)}) {
+		if ($ct =~ qr{^text/}) {
 			$h->set('Content-Type', $ct. ';charset='. $charset_to);
 		}
 		my $fixed_body = [];
